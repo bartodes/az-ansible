@@ -1,0 +1,11 @@
+- name: Install Apache and PHP packages
+  hosts: websrv
+  become: true
+  tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+    - name: Install packages
+      apt:
+        name: [apache2,php]
+        state: present
